@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网球基本规则教学 Demo</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #13212f;
+      --muted: #5e6b78;
+      --line: #d9e2ec;
+      --accent: #1f8a4c;
+      --accent-2: #0f5132;
+      --shadow: 0 12px 28px rgba(19, 33, 47, 0.1);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, #e9f7ee 0, transparent 42%),
+        radial-gradient(circle at 100% 100%, #e8f1ff 0, transparent 38%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 22px 60px;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #ffffff, #f4f8ff);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #e7f6ec;
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    h1 {
+      margin: 14px 0 8px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .video-card {
+      margin-top: 20px;
+      background: #0c1520;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #243241;
+    }
+
+    .video-frame {
+      aspect-ratio: 16/9;
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-caption {
+      margin: 0;
+      color: #d7e2ed;
+      padding: 12px 16px;
+      font-size: 14px;
+      border-top: 1px solid #243241;
+      background: #101c2a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(19, 33, 47, 0.06);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(19, 33, 47, 0.12);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px #e9f7ee;
+      flex: 0 0 auto;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      color: #7a8794;
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">TENNIS DEMO</span>
+      <h1>网球基本规则教学视频</h1>
+      <p class="lead">用 3 分钟快速了解网球计分方式、发球规则与得分判定。这个页面是演示版，内容简短，适合入门预览。</p>
+
+      <div class="video-card">
+        <iframe
+          class="video-frame"
+          src="https://www.youtube.com/embed/41iYwra-4PY"
+          title="网球基础教学视频"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <p class="video-caption">视频建议：先看一遍整体流程，再对照下方规则卡片复习。</p>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="网球规则要点">
+      <article class="card">
+        <h3><span class="dot"></span>计分方式</h3>
+        <p>单局常见计分为 0、15、30、40；若双方 40:40 为平分（Deuce），需连续赢两分才拿下该局。</p>
+      </article>
+
+      <article class="card">
+        <h3><span class="dot"></span>发球规则</h3>
+        <p>每分有两次发球机会。发球需落在对角发球区内；若两次都失误（双误），该分判给对手。</p>
+      </article>
+
+      <article class="card">
+        <h3><span class="dot"></span>得分判定</h3>
+        <p>球在界内且对手未能有效回击即得分；击球出界、下网或触网后未过网，均会失分。</p>
+      </article>
+    </section>
+
+    <footer>Demo 页面 · 网球基础规则教学 · 可按需继续扩展为完整课程网站</footer>
+  </main>
+</body>
+</html>
